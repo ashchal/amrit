@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading Animation</title>
+    <link rel="stylesheet" href="1b.css" />
+  </head>
+  <body>
+    <div class="loading-spinner-container">
+      <div class="loading-spinner"></div>
+    </div>
+    <div class="loading-container">
+      <div>
+        <label for="size">Size: </label>
+        <select id="size" onchange="changeSize()">
+          <option value="50px">Small</option>
+          <option value="100px">Large</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="color">Color: </label>
+        <select id="color" onchange="changeColor()">
+          <option value="#3498db">Blue</option>
+          <option value="#e74c3c">Red</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="speed">Speed: </label>
+        <select id="speed" onchange="changeSpeed()">
+          <option value="1s">Normal</option>
+          <option value="0.5s">Fast</option>
+          <option value="2s">Slow</option>
+        </select>
+      </div>
+    </div>
+
+    <script>
+      function changeSize() {
+        const size = document.getElementById("size").value;
+        document.documentElement.style.setProperty("--size", size);
+      }
+
+      function changeColor() {
+        const color = document.getElementById("color").value;
+        document.documentElement.style.setProperty("--color", color);
+      }
+
+      function changeSpeed() {
+        const speed = document.getElementById("speed").value;
+        document.documentElement.style.setProperty("--speed", speed);
+      }
+    </script>
+  </body>
+</html>
